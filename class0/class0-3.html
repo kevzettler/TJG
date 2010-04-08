@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>class0-3</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    //Vanilla
+    window.onload = function(){ 
+      var link_list = document.getElementById('link_list');
+      var list_children = link_list.childNodes; //some browsers ignore the white space nodes, some don't
+      var last_item_link = list_children[list_children.length - 2].childNodes[0];
+      
+      //events - needs old_events.js
+      //addEvent(last_item_link, 'click', handleEvent());
+      
+    }
+    //Jquery
+    $(document).ready(function(){
+      var link_list = $('#link_list');
+      var list_children = link_list.children();
+      var last_item_link = list_children.last().find('a');
+      
+      //events
+      last_item_link.click(function(){
+        console.log("You clicked the last link");
+      });
+            
+    });
+  </script>
+</head>
+<body>
+  <ul id="link_list">
+    <li><a href="#">link</a></li>
+    <li><a href="#">link</a></li>
+    <li><a href="#">link</a></li>
+    <li><a href="#">link</a></li>
+	</ul>
+</body>
+</html>
