@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>class1-4 advanced selectors</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
+	<style type="text/css">
+	  .green{color:green;}
+	  #special_item{list-style:square}
+	</style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      var the_list = $('ul');
+      
+      //context selectors, better on preformance if you know the contex
+      var all_items = $("li", the_list);
+      console.log('all items, ', all_items);
+      
+      var special = the_list.find('li#special_item');
+      console.log('special item ', special);
+      
+      //using iindexs
+      var special_index = special.index();
+      console.log('special index ', special_index);
+      
+      var special_node = all_items.get(special_index);
+      console.log('speical node', special_node);
+      
+      var jquery_special = $(special_node);
+      console.log('jquery wrapped node', jquery_special);
+      
+      console.log("\n\n Iteration demo");
+      all_items.each(function(){
+        var item_raw = this;
+        var item_wrap = $(this);
+        console.log(item_wrap.index(), item_raw, item_wrap);
+      });
+      
+      
+    });
+  </script>
+</head>
+<body>
+  <p>Here is a <a href="/404" title="p title">link</a> that is not in the list</p>
+  <ul>
+    <li><a href="/404">link</a></li>
+    <li style="display:none;">display:none</li>
+    <li style="visibility:hidden;">hidden</li>
+    <li id="special_item"><a href="">link</a></li>
+    <li><a href="/404">link</a></li>
+    <li><a class="green" href="/greenpage">link</a></li>
+    <li><a href="/404">link</a></li>
+    <li><a href="/404">link</a></li>
+    <li><a class="green" href="/greenpage">link</a></li>
+  </ul>
+  
+</body>
+</html>

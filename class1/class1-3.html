@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>class1-3 pusedo selectors</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
+	<style type="text/css">
+	  .green{color:green;}
+	  #special_item{list-style:square}
+	</style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      
+      var first_item = $("li:first");
+      console.log('first item ', first_item);
+      
+      var even_items = $("li:even");
+      console.log('even items ', even_items);
+      
+      var visible_items = $("li:visible");
+      console.log('visible items ', visible_items);
+      
+      var hidden_items = $("li:not(:visible)");
+      console.log('hidden items ', hidden_items);
+      
+      var fourth_item = $("li:eq(4)");
+      console.log('fourth item ',fourth_item);
+      
+    });
+  </script>
+</head>
+<body>
+  <p>Here is a <a href="/404" title="p title">link</a> that is not in the list</p>
+  <ul>
+    <li><a href="/404">link</a></li>
+    <li style="display:none;">display:none</li>
+    <li style="visibility:hidden;">hidden</li>
+    <li id="special_item"><a href="">link</a></li>
+    <li><a href="/404">link</a></li>
+    <li><a class="green" href="/greenpage">link</a></li>
+    <li><a href="/404">link</a></li>
+    <li><a href="/404">link</a></li>
+    <li><a class="green" href="/greenpage">link</a></li>
+  </ul>
+  
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>class1-1 css selectors</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
+	<style type="text/css">
+	  .green{color:green;}
+	  #special_item{list-style:square}
+	</style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      
+      //by Id
+      var special_item = $("#special_item");
+      console.log('#special_item ', special_item);
+      
+      //by class
+      var green_links = $(".green");
+      console.log('.green ',green_links);
+      
+      //by desendant
+      var all_links_in_list = $("ul li a");
+      console.log('ul li a ', all_links_in_list);
+      
+      //multiple
+      var multiple = $("p a, li a");
+      console.log('p a, li a ', multiple);
+      
+      
+    });
+  </script>
+</head>
+<body>
+  <p>Here is a <a href="">link</a> that is not in the list</p>
+  <ul>
+    <li><a href="">link</a></li>
+    <li id="special_item"><a href="">link</a></li>
+    <li><a href="">link</a></li>
+    <li><a class="green" href="">link</a></li>
+    <li><a href="">link</a></li>
+    <li><a href="">link</a></li>
+    <li><a class="green" href="">link</a></li>
+  </ul>
+  
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<title>class1-2 attribute selectors</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
+	<style type="text/css">
+	  .green{color:green;}
+	  #special_item{list-style:square}
+	</style>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    jQuery(document).ready(function(){
+      
+      //any item with an id attribute
+      var items_with_id = $('*[id]');
+      console.log('*[id] ', items_with_id);
+      
+      //links with href = /greenpage
+      var greenpage_links = $("a[href='/greenpage']");
+      console.log('href=greenpage ',greenpage_links);
+      
+      //links with href=/404
+      var dead_links = $("a[href='/404']");
+      console.log('href=404 ', dead_links);
+      
+      //links with href=/404 AND title = p title
+      var p_title_link = $("a[href='/404'][title='p title']");
+      console.log('href=404 title=p title ',p_title_link);
+      
+    });
+  </script>
+</head>
+<body>
+  <p>Here is a <a href="/404" title="p title">link</a> that is not in the list</p>
+  <ul>
+    <li><a href="/404">link</a></li>
+    <li id="special_item"><a href="">link</a></li>
+    <li><a href="/404">link</a></li>
+    <li><a class="green" href="/greenpage">link</a></li>
+    <li><a href="/404">link</a></li>
+    <li><a href="/404">link</a></li>
+    <li><a class="green" href="/greenpage">link</a></li>
+  </ul>
+  
+</body>
+</html>
