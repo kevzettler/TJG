@@ -15,7 +15,10 @@
       var first_item = $("li:first");
       console.log('first item ', first_item);
       
-      var even_items = $("li:even");
+      var fourth_item = $("li:eq(4)");
+      console.log('fourth item ',fourth_item);
+      
+      var even_items = $("li:even"); // :odd is also available
       console.log('even items ', even_items);
       
       var visible_items = $("li:visible");
@@ -23,9 +26,6 @@
       
       var hidden_items = $("li:not(:visible)");
       console.log('hidden items ', hidden_items);
-      
-      var fourth_item = $("li:eq(4)");
-      console.log('fourth item ',fourth_item);
       
     });
   </script>

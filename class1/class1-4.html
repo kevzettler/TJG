@@ -17,11 +17,11 @@
       var all_items = $("li", the_list);
       console.log('all items, ', all_items);
       
-      var special = the_list.find('li#special_item');
-      console.log('special item ', special);
+      var special_node = the_list.find('li#special_item');
+      console.log('special node ', special_node);
       
-      //using iindexs
-      var special_index = special.index();
+      //using indexs
+      var special_index = special_node.index();
       console.log('special index ', special_index);
       
       var special_node = all_items.get(special_index);
